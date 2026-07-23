@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-# from sklearn.linear_model import LogisticRegression
+# from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 # from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import (
     accuracy_score,
@@ -24,7 +24,7 @@ df = df.drop("customerID", axis=1)
 df["TotalCharges"] = pd.to_numeric(df["TotalCharges"], errors="coerce")
 
 # cek missing value
-print(df.isnull().sum())
+# print(df.isnull().sum())
 
 # hapus baris yang memiliki missing value
 df = df.dropna()
@@ -64,13 +64,13 @@ X_train, X_test, y_train, y_test = train_test_split(
 # print(X_train.shape)
 # print(X_test.shape)
 
-model = RandomForestClassifier(
-    n_estimators=200,
-    max_depth=10,
-    random_state=42
-)
+# model = RandomForestClassifier(
+#     n_estimators=200,
+#     max_depth=10,
+#     random_state=42
+# )
 
-# model = LogisticRegression(max_iter=1000)
+model = LogisticRegression(max_iter=1000)
 
 # model = DecisionTreeClassifier(
 #     random_state=42,
